@@ -3,64 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agência Criativa Web | Design Digital & Estratégia</title>
+    <title>Agência Criativa Web | Design Premium</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts para um visual moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <span class="logo-text">Criativa<span>Web</span></span>
+<body class="page">
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <span class="logo">Criativa<span class="logo--accent">Web</span></span>
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#contato">Contato</a></li>
+            <nav class="header__nav">
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="#home" class="nav-list__link">Home</a></li>
+                    <li class="nav-list__item"><a href="#sobre" class="nav-list__link">Sobre</a></li>
+                    <li class="nav-list__item"><a href="#servicos" class="nav-list__link">Serviços</a></li>
+                    <li class="nav-list__item"><a href="#depoimentos" class="nav-list__link">Depoimentos</a></li>
+                    <li class="nav-list__item"><a href="#contato" class="nav-list__link">Contato</a></li>
                 </ul>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu">
+                    <span class="menu-toggle__bar"></span>
+                    <span class="menu-toggle__bar"></span>
+                    <span class="menu-toggle__bar"></span>
+                </button>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="main-content">
         <!-- Seção Home -->
         <section id="home" class="hero">
-            <div class="container hero-content">
-                <h1>Transformamos ideias em <span>experiências digitais</span> memoráveis.</h1>
-                <p>Design estratégico e desenvolvimento de alta performance para marcas que desejam se destacar no mundo digital.</p>
-                <a href="#contato" class="btn-primary">Vamos Conversar?</a>
+            <div class="container hero__container" data-aos="fade-up">
+                <span class="badge hero__badge">Especialistas em Design Digital</span>
+                <h1 class="hero__title">Criamos o futuro da sua <span class="text--gradient">presença online</span>.</h1>
+                <p class="hero__description">Design de elite, tecnologia de ponta e estratégias que convertem visitantes em clientes fiéis.</p>
+                <div class="hero__actions">
+                    <a href="#contato" class="btn btn--primary">Iniciar Projeto</a>
+                    <a href="#servicos" class="btn btn--outline">Ver Serviços</a>
+                </div>
             </div>
         </section>
 
         <!-- Seção Sobre Nós -->
-        <section id="sobre" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Sobre Nós</h2>
-                    <p>Conheça a essência da nossa agência.</p>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>A <strong>Agência Criativa Web</strong> nasceu da paixão por unir estética e funcionalidade. Com mais de 10 anos de mercado, ajudamos empresas a construírem uma presença digital sólida e impactante.</p>
-                        <p>Nossos valores são baseados na transparência, inovação constante e foco total nos resultados dos nossos clientes.</p>
+        <section id="sobre" class="about section">
+            <div class="container about__container">
+                <div class="about__grid">
+                    <div class="about__image-wrapper" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Equipe Criativa" class="about__image">
                     </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3>150+</h3>
-                            <p>Projetos Entregues</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>50+</h3>
-                            <p>Clientes Ativos</p>
+                    <div class="about__content" data-aos="fade-left">
+                        <span class="section-subtitle">Quem Somos</span>
+                        <h2 class="section-title">Paixão por design, <span class="text--gradient">foco em resultados</span>.</h2>
+                        <p class="about__text">Não somos apenas uma agência, somos seu parceiro estratégico. Unimos criatividade artística com análise de dados para criar soluções que realmente funcionam.</p>
+                        <div class="about__features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-item__icon"></i>
+                                <span class="feature-item__text">Design Exclusivo</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-item__icon"></i>
+                                <span class="feature-item__text">Código Limpo</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,95 +74,126 @@
         </section>
 
         <!-- Seção Serviços -->
-        <section id="servicos" class="services">
+        <section id="servicos" class="services section section--dark">
             <div class="container">
-                <div class="section-header">
-                    <h2>Nossos Serviços</h2>
-                    <p>Soluções completas para o seu negócio digital.</p>
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">O que fazemos</span>
+                    <h2 class="section-title section-title--light">Nossas Especialidades</h2>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="icon">🎨</div>
-                        <h3>Design Gráfico</h3>
-                        <p>Identidade visual, logotipos e materiais promocionais que comunicam a essência da sua marca.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">💻</div>
-                        <h3>Desenvolvimento Web</h3>
-                        <p>Sites responsivos, e-commerces e aplicações web focadas em performance e usabilidade.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">🚀</div>
-                        <h3>Branding</h3>
-                        <p>Posicionamento de marca estratégico para conectar sua empresa ao público certo.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">📱</div>
-                        <h3>UI/UX Design</h3>
-                        <p>Interfaces intuitivas e experiências de usuário pensadas para converter e encantar.</p>
-                    </div>
+                <div class="services__grid">
+                    <article class="card-service" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card-service__icon"><i class="fas fa-pen-nib"></i></div>
+                        <h3 class="card-service__title">Branding</h3>
+                        <p class="card-service__description">Criamos identidades visuais que contam histórias e geram conexão imediata.</p>
+                    </article>
+                    <article class="card-service" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card-service__icon"><i class="fas fa-code"></i></div>
+                        <h3 class="card-service__title">Web Dev</h3>
+                        <p class="card-service__description">Sites ultra-rápidos e otimizados para todos os dispositivos e motores de busca.</p>
+                    </article>
+                    <article class="card-service" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card-service__icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="card-service__title">UI/UX Design</h3>
+                        <p class="card-service__description">Interfaces focadas na experiência do usuário para maximizar a retenção.</p>
+                    </article>
+                    <article class="card-service" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="card-service__icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="card-service__title">Marketing</h3>
+                        <p class="card-service__description">Estratégias de crescimento digital baseadas em dados e performance real.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Seção Depoimentos -->
-        <section id="depoimentos" class="testimonials">
+        <section id="depoimentos" class="testimonials section">
             <div class="container">
-                <div class="section-header">
-                    <h2>O que dizem nossos clientes</h2>
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Confiança de quem <span class="text--gradient">cresceu conosco</span></h2>
                 </div>
-                <div class="testimonials-container">
-                    <blockquote class="testimonial-item">
-                        <p>"A Criativa Web superou todas as nossas expectativas. O novo site aumentou nossas conversões em 40%!"</p>
-                        <cite>— Maria Filo, CEO da TechInova</cite>
+                <div class="testimonials__grid">
+                    <blockquote class="card-testimonial" data-aos="fade-up">
+                        <div class="card-testimonial__stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-testimonial__text">"A melhor decisão que tomamos para nossa startup. O design é impecável."</p>
+                        <footer class="card-testimonial__user">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="Marcos Oliveira" class="card-testimonial__avatar">
+                            <div class="card-testimonial__info">
+                                <h4 class="card-testimonial__name">Julia Mendes</h4>
+                                <span class="card-testimonial__role">Diretora, TechFlow</span>
+                            </div>
+                        </footer>
                     </blockquote>
-                    <blockquote class="testimonial-item">
-                        <p>"Profissionais extremamente competentes e atenciosos. O processo de branding foi transformador para nossa marca."</p>
-                        <cite>— Ana Amélia, Fundadora da Novo Design</cite>
+                    <blockquote class="card-testimonial" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-testimonial__stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-testimonial__text">"Profissionalismo e criatividade em cada detalhe do projeto. Recomendo!"</p>
+                        <footer class="card-testimonial__user">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="Julia Mendes" class="card-testimonial__avatar">
+                            <div class="card-testimonial__info">
+                                <h4 class="card-testimonial__name">Marcos Oliveira</h4>
+                                <span class="card-testimonial__role">CEO, ArtStudio</span>
+                            </div>
+                        </footer>
                     </blockquote>
                 </div>
             </div>
         </section>
 
         <!-- Seção Contato -->
-        <section id="contato" class="contact">
+        <section id="contato" class="contact section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Contato</h2>
-                    <p>Pronto para começar seu próximo projeto?</p>
-                </div>
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <h3>Fale Conosco</h3>
-                        <p>📍 Av. Paulista, 1000 - São Paulo, SP</p>
-                        <p>📞 (11) 98765-4321</p>
-                        <p>📧 contato@criativaweb.com.br</p>
+                <div class="contact-box" data-aos="zoom-out">
+                    <div class="contact-box__info">
+                        <h2 class="contact-box__title">Vamos criar algo <span class="text--dark">incrível</span>?</h2>
+                        <p class="contact-box__description">Preencha o formulário e nossa equipe entrará em contato em menos de 24h.</p>
+                        <div class="contact-box__details">
+                            <p class="contact-box__item"><i class="fas fa-envelope"></i> hello@criativaweb.com</p>
+                            <p class="contact-box__item"><i class="fas fa-phone"></i> +55 (11) 9999-8888</p>
+                        </div>
                     </div>
                     <form class="contact-form">
-                        <input type="text" placeholder="Seu Nome" required>
-                        <input type="email" placeholder="Seu E-mail" required>
-                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                        <div class="contact-form__group">
+                            <input type="text" class="contact-form__input" placeholder="Nome" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <input type="email" class="contact-form__input" placeholder="E-mail" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <textarea class="contact-form__textarea" placeholder="Como podemos ajudar?" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">Enviar Agora</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Agência Criativa Web. Todos os direitos reservados.</p>
+            <div class="footer__content">
+                <span class="logo">Criativa<span class="logo--accent">Web</span></span>
+                <div class="social-links">
+                    <a href="#" class="social-links__link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-links__link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-links__link" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <hr class="footer__divider">
+            <p class="footer__copyright">&copy; 2026 Agência Criativa Web. Design de Elite.</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Script simples para o menu hambúrguer
+        AOS.init({ duration: 1000, once: true });
         const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
+        const navList = document.querySelector('.nav-list');
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('is-active');
+            navList.classList.toggle('nav-list--active');
+            menuToggle.classList.toggle('menu-toggle--active');
         });
     </script>
 </body>
