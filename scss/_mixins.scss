@@ -1,0 +1,224 @@
+// ==========================================================================
+// MIXINS SASS
+// Estilos reutilizáveis para o projeto
+// ==========================================================================
+
+@use 'variaveis' as *;
+
+// --------------------------------------------------------------------------
+// MIXIN: Flexbox Center
+// Centraliza elementos usando flexbox
+// --------------------------------------------------------------------------
+@mixin flex-center($direction: row, $gap: 0) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    @if $gap != 0 {
+        gap: $gap;
+    }
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Flexbox Between
+// Distribui elementos com espaço entre eles
+// --------------------------------------------------------------------------
+@mixin flex-between($gap: 0) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @if $gap != 0 {
+        gap: $gap;
+    }
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Botão Base
+// Estilos base para todos os botões
+// --------------------------------------------------------------------------
+@mixin botao-base($padding-y: $espacamento-lg, $padding-x: $espacamento-xl) {
+    display: inline-block;
+    padding: $padding-y $padding-x;
+    border-radius: $border-radius-md;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    transition: $transition-main;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Botão Primary
+// Botão com estilo primário
+// --------------------------------------------------------------------------
+@mixin botao-primary {
+    @include botao-base;
+    background: $color-primary;
+    color: $color-white;
+    box-shadow: 0 10px 20px $color-primary-glow;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px $color-primary-glow;
+    }
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Botão Outline
+// Botão com estilo outline
+// --------------------------------------------------------------------------
+@mixin botao-outline {
+    @include botao-base;
+    background: transparent;
+    color: $color-dark;
+    border: 2px solid $color-dark;
+
+    &:hover {
+        background: $color-dark;
+        color: $color-light;
+    }
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Card Base
+// Estilos base para cards
+// --------------------------------------------------------------------------
+@mixin card-base($padding: $espacamento-2xl, $radius: $border-radius-xl) {
+    background: $color-white;
+    padding: $padding;
+    border-radius: $radius;
+    transition: $transition-main;
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Texto Gradiente
+// Aplica gradiente em textos
+// --------------------------------------------------------------------------
+@mixin texto-gradiente {
+    background: linear-gradient(to right, $color-primary, $color-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Section Padding
+// Espaçamento padrão para seções
+// --------------------------------------------------------------------------
+@mixin section-padding($vertical: $espacamento-section, $horizontal: 0) {
+    padding: $vertical $horizontal;
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Grid Responsivo
+// Cria grid responsivo com colunas automáticas
+// --------------------------------------------------------------------------
+@mixin grid-responsivo($min-width: 250px, $gap: $espacamento-xl) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    gap: $gap;
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Media Query - Mobile First
+// Facilita a criação de media queries
+// --------------------------------------------------------------------------
+@mixin responsive($breakpoint) {
+    @if $breakpoint == sm {
+        @media (max-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == md {
+        @media (max-width: $breakpoint-md) { @content; }
+    } @else if $breakpoint == lg {
+        @media (max-width: $breakpoint-lg) { @content; }
+    } @else if $breakpoint == xl {
+        @media (max-width: $breakpoint-xl) { @content; }
+    }
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Input Base
+// Estilos base para inputs de formulário
+// --------------------------------------------------------------------------
+@mixin input-base {
+    width: 100%;
+    padding: $espacamento-lg;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-lg;
+    background: $color-light;
+    font-family: inherit;
+    transition: $transition-main;
+
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+        background: $color-white;
+    }
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Espaçamento Vertical
+// Aplica margens verticais proporcionais
+// --------------------------------------------------------------------------
+@mixin espacamento-vertical($multiplicador: 1) {
+    margin-top: calc($espacamento-base * $multiplicador);
+    margin-bottom: calc($espacamento-base * $multiplicador);
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Título de Seção
+// Estilos para títulos de seção
+// --------------------------------------------------------------------------
+@mixin titulo-secao($size: $font-size-3xl, $color: $color-dark) {
+    font-size: $size;
+    line-height: $line-height-tight;
+    margin-bottom: $espacamento-xl;
+    color: $color;
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Hover Lift
+// Efeito de elevação no hover
+// --------------------------------------------------------------------------
+@mixin hover-lift($distance: -15px, $shadow: $shadow-md) {
+    &:hover {
+        transform: translateY($distance);
+        box-shadow: $shadow;
+    }
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Absolute Fill
+// Preenche o elemento pai absolutamente
+// --------------------------------------------------------------------------
+@mixin absolute-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// --------------------------------------------------------------------------
+// MIXIN: Underline animado
+// Cria underline animado para links
+// --------------------------------------------------------------------------
+@mixin underline-animado($height: 2px, $color: $color-primary) {
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: $height;
+        background: $color;
+        transition: $transition-main;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}

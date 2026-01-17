@@ -1,0 +1,29 @@
+// ==========================================================================
+// ESTILOS.SCSS - Arquivo Principal
+// Importa todos os módulos SASS usando @use
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// VARIÁVEIS E MIXINS (módulos base)
+// --------------------------------------------------------------------------
+// Nota: Estes são importados internamente pelos outros arquivos via @use
+// Incluímos aqui apenas para referência e para garantir a ordem de compilação
+
+// --------------------------------------------------------------------------
+// IMPORTAÇÕES DOS MÓDULOS
+// Ordem: variáveis > mixins > base > layout > componentes
+// --------------------------------------------------------------------------
+
+// Base: reset, tipografia, elementos fundamentais
+@use 'base';
+
+// Layout: estrutura da página (container, header, footer, seções)
+@use 'layout';
+
+// Componentes: elementos reutilizáveis (botões, cards, badges)
+@use 'componentes';
+
+// ==========================================================================
+// FIM DO ARQUIVO PRINCIPAL
+// Este arquivo compila para css/estilos.css
+// ==========================================================================

@@ -1,0 +1,97 @@
+// ==========================================================================
+// VARIÁVEIS SASS
+// Define cores, espaçamentos, fontes e tamanhos do projeto
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// CORES
+// --------------------------------------------------------------------------
+$color-primary: #6366f1;
+$color-primary-glow: rgba(99, 102, 241, 0.5);
+$color-accent: #a855f7;
+$color-dark: #0f172a;
+$color-dark-soft: #1e293b;
+$color-light: #f8fafc;
+$color-white: #ffffff;
+$color-text: #2f3338;
+$color-star: #fbbf24;
+$color-border: #e2e8f0;
+
+// Glass effect
+$glass-bg: rgba(255, 255, 255, 0.8);
+
+// --------------------------------------------------------------------------
+// ESPAÇAMENTOS
+// --------------------------------------------------------------------------
+$espacamento-base: 1rem;
+$espacamento-xs: calc($espacamento-base / 4);     // 0.25rem
+$espacamento-sm: calc($espacamento-base / 2);     // 0.5rem
+$espacamento-md: $espacamento-base;               // 1rem
+$espacamento-lg: calc($espacamento-base * 1.5);   // 1.5rem
+$espacamento-xl: calc($espacamento-base * 2);     // 2rem
+$espacamento-2xl: calc($espacamento-base * 3);    // 3rem
+$espacamento-3xl: calc($espacamento-base * 4);    // 4rem
+$espacamento-4xl: calc($espacamento-base * 5);    // 5rem
+$espacamento-section: calc($espacamento-base * 8); // 8rem
+
+// --------------------------------------------------------------------------
+// TIPOGRAFIA
+// --------------------------------------------------------------------------
+$font-family-base: 'Plus Jakarta Sans', sans-serif;
+$font-size-base: 16px;
+$font-size-xs: 0.8rem;
+$font-size-sm: 0.85rem;
+$font-size-md: 0.9rem;
+$font-size-lg: 1.2rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 2.5rem;
+$font-size-3xl: 3rem;
+$font-size-hero: clamp(2.5rem, 8vw, 4.5rem);
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+$line-height-base: 1.6;
+$line-height-tight: 1.1;
+$line-height-none: 1;
+
+// --------------------------------------------------------------------------
+// BORDAS E RAIOS
+// --------------------------------------------------------------------------
+$border-radius-sm: 0.5rem;
+$border-radius-md: 0.8rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 2rem;
+$border-radius-2xl: 3rem;
+$border-radius-section: 4rem;
+$border-radius-full: 50%;
+
+// --------------------------------------------------------------------------
+// TRANSIÇÕES
+// --------------------------------------------------------------------------
+$transition-main: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+// --------------------------------------------------------------------------
+// BREAKPOINTS
+// --------------------------------------------------------------------------
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// --------------------------------------------------------------------------
+// CONTAINER
+// --------------------------------------------------------------------------
+$container-max-width: 1200px;
+
+// --------------------------------------------------------------------------
+// SOMBRAS
+// --------------------------------------------------------------------------
+$shadow-sm: 0 10px 20px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 20px 40px rgba(0, 0, 0, 0.05);
+$shadow-lg: 0 40px 80px rgba(0, 0, 0, 0.1);
+$shadow-image: 20px 20px 60px rgba(0, 0, 0, 0.1);
+$shadow-nav: 0 10px 20px rgba(0, 0, 0, 0.1);

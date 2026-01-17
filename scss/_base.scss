@@ -1,0 +1,137 @@
+// ==========================================================================
+// BASE SCSS
+// Estilos base: reset, tipografia e elementos fundamentais
+// ==========================================================================
+
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// --------------------------------------------------------------------------
+// RESET
+// --------------------------------------------------------------------------
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+// --------------------------------------------------------------------------
+// HTML & BODY
+// --------------------------------------------------------------------------
+html {
+    scroll-behavior: smooth;
+    font-size: $font-size-base;
+}
+
+body {
+    font-family: $font-family-base;
+    background-color: $color-light;
+    color: $color-dark-soft;
+    line-height: $line-height-base;
+    overflow-x: hidden;
+}
+
+// --------------------------------------------------------------------------
+// TIPOGRAFIA
+// --------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-extrabold;
+    line-height: $line-height-tight;
+    color: $color-dark;
+}
+
+p {
+    margin-bottom: calc($espacamento-base / 2);
+    color: $color-text;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: $transition-main;
+}
+
+// --------------------------------------------------------------------------
+// IMAGENS
+// --------------------------------------------------------------------------
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+// --------------------------------------------------------------------------
+// LISTAS
+// --------------------------------------------------------------------------
+ul, ol {
+    list-style: none;
+}
+
+// --------------------------------------------------------------------------
+// FORMULÁRIOS
+// --------------------------------------------------------------------------
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+// --------------------------------------------------------------------------
+// CLASSES UTILITÁRIAS DE TEXTO
+// --------------------------------------------------------------------------
+.text {
+    &--gradient {
+        @include texto-gradiente;
+    }
+
+    &--dark {
+        color: $color-dark;
+    }
+
+    &--light {
+        color: $color-white;
+    }
+
+    &--muted {
+        color: $color-text;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+// --------------------------------------------------------------------------
+// TÍTULOS DE SEÇÃO
+// --------------------------------------------------------------------------
+.section-title {
+    @include titulo-secao;
+
+    &--light {
+        color: $color-white;
+    }
+}
+
+.section-subtitle {
+    color: $color-primary;
+    font-weight: $font-weight-extrabold;
+    text-transform: uppercase;
+    font-size: $font-size-md;
+    display: block;
+    margin-bottom: $espacamento-md;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: $espacamento-2xl;
+}

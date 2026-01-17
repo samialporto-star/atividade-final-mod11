@@ -1,0 +1,369 @@
+// ==========================================================================
+// LAYOUT SCSS
+// Estrutura geral da página: container, header, footer, seções
+// ==========================================================================
+
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// --------------------------------------------------------------------------
+// CONTAINER
+// --------------------------------------------------------------------------
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $espacamento-xl;
+}
+
+// --------------------------------------------------------------------------
+// SEÇÕES
+// --------------------------------------------------------------------------
+.section {
+    @include section-padding;
+
+    &--dark {
+        background-color: $color-dark;
+        color: $color-white;
+        border-radius: $border-radius-section;
+        margin: 0 $espacamento-md;
+    }
+}
+
+// --------------------------------------------------------------------------
+// HEADER
+// --------------------------------------------------------------------------
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: $color-light;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 100;
+
+    &__container {
+        height: 90px;
+        @include flex-between;
+    }
+
+    &__logo {
+        // Logo container
+    }
+
+    &__nav {
+        @include flex-center(row, $espacamento-xl);
+    }
+}
+
+// --------------------------------------------------------------------------
+// NAVEGAÇÃO
+// --------------------------------------------------------------------------
+.nav-list {
+    display: flex;
+    gap: $espacamento-xl + $espacamento-sm;
+
+    &__item {
+        // Item da navegação
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $color-dark;
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-md + 0.05rem;
+        @include underline-animado;
+    }
+
+    &--active {
+        display: flex;
+    }
+}
+
+// --------------------------------------------------------------------------
+// MENU TOGGLE (Mobile)
+// --------------------------------------------------------------------------
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+
+    &__bar {
+        width: 25px;
+        height: 3px;
+        background: $color-dark;
+        transition: $transition-main;
+    }
+
+    &--active {
+        .menu-toggle__bar {
+            &:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// FOOTER
+// --------------------------------------------------------------------------
+.footer {
+    padding: $espacamento-3xl 0 $espacamento-xl;
+
+    &__content {
+        @include flex-between;
+        margin-bottom: $espacamento-2xl;
+    }
+
+    &__divider {
+        border: 0;
+        border-top: 1px solid $color-border;
+        margin-bottom: $espacamento-xl;
+    }
+
+    &__copyright {
+        text-align: center;
+        font-size: $font-size-md;
+        color: $color-text;
+    }
+}
+
+// --------------------------------------------------------------------------
+// HERO SECTION
+// --------------------------------------------------------------------------
+.hero {
+    height: 100vh;
+    @include flex-center;
+    background: 
+        radial-gradient(circle at top right, rgba($color-primary, 0.1), transparent),
+        radial-gradient(circle at bottom left, rgba($color-accent, 0.1), transparent);
+
+    &__container {
+        // Container do hero
+    }
+
+    &__badge {
+        margin-bottom: $espacamento-lg;
+    }
+
+    &__title {
+        font-size: $font-size-hero;
+        line-height: $line-height-none;
+        font-weight: $font-weight-extrabold;
+        color: $color-dark;
+        margin-bottom: $espacamento-lg;
+        letter-spacing: -2px;
+    }
+
+    &__description {
+        font-size: $font-size-lg;
+        max-width: 600px;
+        margin-bottom: $espacamento-xl + $espacamento-sm;
+        color: $color-text;
+    }
+
+    &__actions {
+        display: flex;
+        gap: $espacamento-lg;
+    }
+}
+
+// --------------------------------------------------------------------------
+// ABOUT SECTION
+// --------------------------------------------------------------------------
+.about {
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $espacamento-4xl;
+        align-items: center;
+    }
+
+    &__image-wrapper {
+        // Wrapper da imagem
+    }
+
+    &__image {
+        width: 100%;
+        border-radius: $border-radius-xl;
+        box-shadow: $shadow-image;
+    }
+
+    &__content {
+        // Conteúdo do about
+    }
+
+    &__text {
+        color: $color-text;
+        margin-bottom: calc($espacamento-base / 2);
+    }
+
+    &__features {
+        margin-top: $espacamento-xl;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $espacamento-md;
+    }
+}
+
+// --------------------------------------------------------------------------
+// SERVICES SECTION
+// --------------------------------------------------------------------------
+.services {
+    &__grid {
+        @include grid-responsivo;
+        margin-top: $espacamento-3xl;
+    }
+}
+
+// --------------------------------------------------------------------------
+// TESTIMONIALS SECTION
+// --------------------------------------------------------------------------
+.testimonials {
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $espacamento-xl;
+        margin-top: $espacamento-3xl;
+    }
+}
+
+// --------------------------------------------------------------------------
+// CONTACT SECTION
+// --------------------------------------------------------------------------
+.contact {
+    &-box {
+        background: $color-white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: $border-radius-2xl;
+        overflow: hidden;
+        box-shadow: $shadow-lg;
+
+        &__info {
+            background: $color-primary;
+            color: $color-white;
+            padding: $espacamento-3xl;
+        }
+
+        &__title {
+            font-size: $font-size-2xl;
+            margin-bottom: $espacamento-lg;
+        }
+
+        &__description {
+            margin-bottom: $espacamento-xl;
+            opacity: 0.9;
+        }
+
+        &__details {
+            // Container dos detalhes de contato
+        }
+
+        &__item {
+            margin-bottom: $espacamento-md;
+            @include flex-center(row, $espacamento-sm);
+            justify-content: flex-start;
+        }
+    }
+
+    &-form {
+        padding: $espacamento-3xl;
+        display: flex;
+        flex-direction: column;
+        gap: $espacamento-lg;
+
+        &__group {
+            // Grupo de input
+        }
+
+        &__input {
+            @include input-base;
+        }
+
+        &__textarea {
+            @include input-base;
+            resize: vertical;
+            min-height: 100px;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// MEDIA QUERIES
+// --------------------------------------------------------------------------
+@include responsive(lg) {
+    .about__grid,
+    .contact-box,
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        text-align: center;
+
+        &__description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__actions {
+            justify-content: center;
+        }
+    }
+
+    .section-title {
+        font-size: $font-size-2xl;
+    }
+}
+
+@include responsive(md) {
+    .header__container {
+        height: 80px;
+    }
+
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: $color-white;
+        padding: $espacamento-xl;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $shadow-nav;
+
+        &--active {
+            display: flex;
+        }
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .section {
+        padding: $espacamento-4xl 0;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        gap: $espacamento-xl;
+    }
+
+    .about__features {
+        grid-template-columns: 1fr;
+    }
+}

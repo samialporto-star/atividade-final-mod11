@@ -1,0 +1,195 @@
+// ==========================================================================
+// COMPONENTES SCSS
+// Componentes reutilizáveis: botões, cards, badges, etc.
+// ==========================================================================
+
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// --------------------------------------------------------------------------
+// LOGO
+// --------------------------------------------------------------------------
+.logo {
+    font-size: 1.6rem;
+    font-weight: $font-weight-extrabold;
+    letter-spacing: -1px;
+    color: $color-dark;
+
+    &--accent {
+        @include texto-gradiente;
+    }
+}
+
+// --------------------------------------------------------------------------
+// BOTÕES (BEM: .btn, .btn--primary, .btn--outline, .btn--full)
+// --------------------------------------------------------------------------
+.btn {
+    @include botao-base;
+
+    &--primary {
+        background: $color-primary;
+        color: $color-white;
+        box-shadow: 0 10px 20px $color-primary-glow;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px $color-primary-glow;
+        }
+    }
+
+    &--outline {
+        background: transparent;
+        color: $color-dark;
+        border: 2px solid $color-dark;
+
+        &:hover {
+            background: $color-dark;
+            color: $color-light;
+        }
+    }
+
+    &--full {
+        width: 100%;
+    }
+}
+
+// --------------------------------------------------------------------------
+// BADGE
+// --------------------------------------------------------------------------
+.badge {
+    background: rgba($color-primary, 0.1);
+    color: $color-primary;
+    padding: $espacamento-sm $espacamento-lg;
+    border-radius: $border-radius-xl;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+// --------------------------------------------------------------------------
+// SOCIAL LINKS
+// --------------------------------------------------------------------------
+.social-links {
+    display: flex;
+    gap: $espacamento-lg;
+
+    &__link {
+        font-size: $font-size-xl;
+        color: $color-dark;
+        transition: $transition-main;
+
+        &:hover {
+            color: $color-primary;
+            transform: scale(1.2);
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// FEATURE ITEM
+// --------------------------------------------------------------------------
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: $espacamento-sm;
+    font-weight: $font-weight-semibold;
+
+    &__icon {
+        color: $color-primary;
+    }
+
+    &__text {
+        color: $color-dark-soft;
+    }
+}
+
+// --------------------------------------------------------------------------
+// CARD SERVICE
+// --------------------------------------------------------------------------
+.card-service {
+    @include card-base($espacamento-2xl, $border-radius-xl);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    @include hover-lift;
+
+    &:hover {
+        background: $color-primary;
+
+        .card-service__icon {
+            color: $color-white;
+        }
+    }
+
+    &__icon {
+        font-size: $font-size-2xl;
+        margin-bottom: $espacamento-lg;
+        color: $color-primary;
+        transition: $transition-main;
+    }
+
+    &__title {
+        margin-bottom: $espacamento-md;
+        font-size: $font-size-xl;
+        color: inherit;
+    }
+
+    &__description {
+        color: inherit;
+        opacity: 0.8;
+    }
+}
+
+// --------------------------------------------------------------------------
+// CARD TESTIMONIAL
+// --------------------------------------------------------------------------
+.card-testimonial {
+    @include card-base($espacamento-2xl, $border-radius-xl);
+    box-shadow: $shadow-md;
+    border: none;
+
+    &__stars {
+        color: $color-star;
+        margin-bottom: $espacamento-lg;
+        
+        i {
+            margin-right: calc($espacamento-xs / 2);
+        }
+    }
+
+    &__text {
+        font-style: italic;
+        margin-bottom: $espacamento-lg;
+        color: $color-dark-soft;
+        line-height: $line-height-base;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: $espacamento-md;
+    }
+
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: $border-radius-full;
+        object-fit: cover;
+    }
+
+    &__info {
+        // Container de informações do usuário
+    }
+
+    &__name {
+        font-weight: $font-weight-bold;
+        color: $color-dark;
+        font-size: $font-size-md + 0.1rem;
+    }
+
+    &__role {
+        font-size: $font-size-sm;
+        color: $color-text;
+    }
+}
